@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+ .container {
+      width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    #response {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <textarea id="inputText" onkeydown="if(event.keyCode === 13) getResponse()"></textarea>
+    <button onclick="getResponse()">发送</button>
+    <div id="response"></div>
+  </div>
+
+  <script>
+    function getResponse() {
+      var input = document.getElementById('inputText').value;
+      var keywords = ["你好", "再见", "时间", "天气"];
+      var badWords = ["sb", "SB", "傻逼", "智障", "你妈", "操你妈", "fuck", "Fuck"];  // 在这里添加您认为的脏话
+
+      for (var i = 0; i < keywords.length; i++) {
+        if (input.includes(keywords[i])) {
+          switch (keywords[i]) {
+            case "你好":
+              document.getElementById('response').innerHTML = '您好呀，很高兴与您交流！';
+              break;
+            case "再见":
+              document.getElementById('response').innerHTML = '再见，祝您有美好的一天！';
+              break;
+            case "时间":
+              var now = new Date();
+              var hours = now.getHours();
+              var minutes = now.getMinutes();
+              var seconds = now.getSeconds();
+              document.getElementById('response').innerHTML = '当前时间是：' + hours + ':' + minutes + ':' + seconds;
+              break;
+            case "天气":
+              // 获取天气数据
+              fetchWeatherData();
+              break;
+          }
+          return;
+        }
+      }
+
+      for (var j = 0; j < badWords.length; j++) {
+        if (input.includes(badWords[j])) {
+          document.getElementById('response').innerHTML = '请文明回答！！';
+          return;
+        }
+      }
+
+      document.getElementById('response').innerHTML = '错误！！请检查您的内容是否正确';
+    }
+
+    function fetchWeatherData() {
+      const apiKey = 'd71c994bb51512646069a51fb00ebb9a';
+      const city = '盐城';
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(url)
+      .then(response => response.json())
+      .then(data => {
+           // 在这里处理获取到的天气数据并显示在页面上
+           document.getElementById('response').innerHTML = `当前城市${city}的天气状况：${data.weather[0].description}，温度：${data.main.temp} 摄氏度`;
+         })
+      .catch(error => {
+           document.getElementById('response').innerHTML = '获取天气数据时出错';
+         });
+    }
+  </script>
+</body>
+
+</html>
