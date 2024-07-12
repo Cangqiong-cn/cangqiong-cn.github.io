@@ -1,66 +1,131 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <body>
 
   <head>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>苍穹联协_官方门户网站</title>
     <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
     <link rel="stylesheet" type="text/css" href="styles.css">
     <img src="headhbiao.png" alt=" ">
 <h1>苍穹联协 官方门户网站</h1>
 <p><small>Internet DogHead CangQiong Joint Association Official Website</small></p>	
-  <br>	
+  <br><br>	
 
   <style>
-    body{
-      margin:0;
-      padding:0;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background-color: #efeeee;
+    head * {
+      text-align: center;
     }
-    .img{
-       width: 100xp
-       height: 100xp
-       display:flex;
-       justify-content:center;
-       align-items:center;
-       border-radius: 20xp;
-       box-shadow: 18xp 18xp 30xp rgba(0,0,0,0.2)
-                   -18xp -18xp 30xp rgba(255,255,255, 1);
-       transition: all .2s ease-out;
-       
+
+    :root {
+      --w: 80vw;
+      --div_w: calc(var(--w) / 6);
+      --h: 95px;
+      --r: 15px;
     }
-    img{
-       width: 60xp; 
-       transition: all .2s ease-out;
+
+    nav {
+      width: var(--w);
+      height: var(--h);
+      border-radius: var(--r);
+      background: rgba(255, 255, 255,.5);
+      box-shadow: 16px 16px 32px #9f9f9f,
+        -16px -16px 32px #ffffff;
+      display: flex;
+      margin: 100px auto;
+      position: relative;
     }
-    .img:hover{
-      cursor:pointer;
-      box-shadow: 0 0 0 rgab(0,0,0,0.2),
-      0 0 0 rgba(255,255,255,0.8)
-      inset 18xp 19xp 30xp rgba(0,0,0,0.1),
-      inset -18xp -18xp 30xp rgba(255,255,255, 1);
+
+  .item {
+      width: var(--div_w);
+      height: var(--h);
+      font-size: 30px;
+      text-align: center;
+      line-height: var(--h);
     }
-    .img:hover img{
-      width:58xp;
+
+  .item:nth-child(2):hover~#block {
+      left: var(--div_w);
+    }
+
+  .item:nth-child(3):hover~#block {
+      left: calc(var(--div_w) * 2);
+    }
+
+  .item:nth-child(4):hover~#block {
+      left: calc(var(--div_w) * 3);
+    }
+
+  .item:nth-child(5):hover~#block {
+      left: calc(var(--div_w) * 4);
+    }
+
+  .item:nth-child(6):hover~#block {
+      left: calc(var(--div_w) * 5);
+    }
+    .item:hover{
+        cursor: pointer;
+    }
+    #block {
+      transition: .5s;
+      width: var(--div_w);
+      height: var(--h);
+      background-color: rgba(100, 100, 130,.8);
+      border-radius: var(--r);
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+    .eDiv{
+        padding: 10px;
+        margin: 100px auto;
+        width: 600px;
+        height: 400px;
+        border: 2px solid #000;
+        border-radius: 10px;
+    }
+    p::selection{
+        background-color: #9f9f9f;
+        color: black;
     }
   </style>
-    
-  </head>
+  <hr><br>
+</head>
 
-<!-- body code start -->
-  
-<div class="img">
-  <a herf="https://cangqiong-cn.github.io/qq.html>
-  <img src="qqpng.png" alt="qq">
-</div>
-  
+<body>
+
+  <nav>
+    <div class="item"><a href="https://cangqiong-cn.github.io/about.html">关于我们</a></div>
+    <div class="item"><a href="https://cangqiong-cn.github.io/about.html">加入我们</a></div>
+    <div class="item"><a href="https://cangqiong-cn.github.io/rule.html">本站规则</a></div>
+    <div class="item"><a href="https://cangqiong-cn.github.io/yonghu.html">用户隐私条例</a></div>
+    <div class="item"><a href="https://cangqiong-cn.github.io/mhelp.html">赞助</a></div>
+    <div class="item"><a href="https://cangqiong-cn.github.io/kefu.html">自动客服</a></div>
+    <div id="block"></div>
+  </nav>
+
+  <div class="eDiv">
+      <h2>欢迎：</h2>
+      <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;欢迎踏入这个充满创意与技术的狗头动画世界——我们的动画分析与制作技术网站！<br>
+          动画，是一门融合了艺术与技术的奇妙学科，它有着无尽的魅力和可能性。在这里，您将找到深入了解动画的钥匙。对于想要提升自己动画制作技能的您来说，本网站是一座知识的宝库。我们提供详细的教程、案例分析以及专家经验分享，助您掌握从动画的基本原理到高级制作技术的一切内容。无论是传统的手绘动画技巧，还是先进的数字动画工具应用，我们都一一为您呈现。如果您热衷于对优秀狗头动画作品进行深入解读，我们也有丰富的分析文章和视频，带您领略动画大师们的创作思路，学习如何从专业角度欣赏和理解动画的艺术价值。在这里，您不是一个人在探索。我们拥有一个充满热情的动画爱好者和专业人士社区，大家可以交流想法、分享经验、互相学习。<br>我们期待您在这里开启精彩的学习与探索之旅，不断提升自己的动画分析和制作能力，为狗头动画注入新的活力。再次欢迎您，让我们一起为狗头动画的未来努力！
+      </p>
+  </div>
   
 </body>
-  
+<footer>
+    <br><br><br><br><br><br>
+    <div style="background-color: white;">
+        <hr>
+            <p>Copyright © 2024 cangqiong.github.io All rights reserved | 版权所有·保留所有权利 |苍穹联协 主办
+    <br>
+    建议您使用Chrome、Firefox、Edge、IE10及以上版本和360等主流浏览器浏览本网站</p>
+    <small><img src="icon120.png" alt="WMZ" width="1%" height="2%"> <a href="https://icp.gov.moe/?keyword=20240380" target="_blank">萌ICP备20240380号</a></small><br></p>
+    <br><br><br><br>
+    </div>
+</footer> 
 </html>
