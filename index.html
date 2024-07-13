@@ -95,19 +95,24 @@
     }
 @media screen and (max-width: 768px) {
   nav {
-    width: 100%;
-    margin: 20px auto;
-    box-shadow: none;
+    background-color: #343a40;
+    padding: 10px 0;
   }
 
  .item {
     width: 100%;
-    font-size: 20px;
-    padding: 10px 0;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
   }
 
-  #block {
-    width: 100%;
+ .item:hover {
+    background-color: #495057;
+  }
+
+ .item +.item {
+    border-top: 1px solid #495057;
   }
 }
   </style>
