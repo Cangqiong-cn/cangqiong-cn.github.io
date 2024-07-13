@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+  .chat-container {
+      width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+  .message {
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      max-width: 80%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+  .user-message {
+      background-color: #4CAF50;
+      color: white;
+      align-self: flex-end;
+    }
+
+  .bot-message {
+      background-color: #e0e0e0;
+      align-self: flex-start;
+    }
+
+  .input-group {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    #inputText {
+      padding: 15px;
+      border: 2px solid #4CAF50;
+      border-radius: 15px;
+      font-size: 16px;
+      flex: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    select {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      flex: 1;
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chat-container">
+    <div id="chat"></div>
+    <div class="input-group">
+      <textarea id="inputText" onkeydown="if(event.keyCode === 13) sendMessage()"></textarea>
+      <select id="citySelect">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+        <option value="成都">成都</option>
+        <option value="重庆">重庆</option>
+        <option value="杭州">杭州</option>
+        <option value="武汉">武汉</option>
+        <option value="西安">西安</option>
+        <option value="天津">天津</option>
+        <option value="南京">南京</option>
+        <option value="长沙">长沙</option>
+        <option value="郑州">郑州</option>
+        <option value="济南">济南</option>
+        <option value="青岛">青岛</option>
+        <option value="大连">大连</option>
+        <option value="宁波">宁波</option>
+        <option value="厦门">厦门</option>
+        <option value="沈阳">沈阳</option>
+        <option value="长春">长春</option>
+        <option value="哈尔滨">哈尔滨</option>
+        <option value="合肥">合肥</option>
+        <option value="福州">福州</option>
+        <option value="石家庄">石家庄</option>
+        <option value="苏州">苏州</option>
+        <option value="佛山">佛山</option>
+        <option value="东莞">东莞</option>
+        <option value="无锡">无锡</option>
+        <option value="烟台">烟台</option>
+        <option value="太原">太原</option>
+        <option value="南昌">南昌</option>
+        <option value="昆明">昆明</option>
+        <option value="贵阳">贵阳</option>
+        <option value="南宁">南宁</option>
+        <option value="海口">海口</option>
+        <option value="兰州">兰州</option>
+        <option value="西宁">西宁</option>
+        <option value="银川">银川</option>
+        <option value="呼和浩特">呼和浩特</option>
+        <option value="乌鲁木齐">乌鲁木齐</option>
+        <option value="拉萨">拉萨</option>
+        <option value="南京">南京</option>
+        <option value="无锡">无锡</option>
+        <option value="徐州">徐州</option>
+        <option value="常州">常州</option>
+        <option value="苏州">苏州</option>
+        <option value="南通">南通</option>
+        <option value="连云港">连云港</option>
+        <option value="淮安">淮安</option>
+        <option value="盐城">盐城</option>
+        <option value="扬州">扬州</option>
+        <option value="镇江">镇江</option>
+        <option value="泰州">泰州</option>
+        <option value="宿迁">宿迁</option>
+      </select>
+      <button onclick="sendMessage()">发送</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      var input = document.getElementById('inputText').value;
+      var selectedCity = document.getElementById('citySelect').value;
+      var chatDiv = document.getElementById('chat');
+
+      var userMessageDiv = document.createElement('div');
+      userMessageDiv.className ='message user-message';
+      userMessageDiv.innerHTML = input;
+      chatDiv.appendChild(userMessageDiv);
+
+      // 定义一些常见问题和回答
+      var questionsAndAnswers = {
+        "今天吃什么": "亲爱的，这取决于您的口味和喜好哦。您可以尝试一些美味的中餐，比如糖醋排骨；或者来一份精致的西餐，像意大利面；小吃也是不错的选择，比如烤串或者煎饼果子。",
+        "明天吃什么": "亲爱的，这取决于您的口味和喜好哦。您可以尝试一些美味的中餐，比如糖醋排骨；或者来一份精致的西餐，像意大利面；小吃也是不错的选择，比如烤串或者煎饼果子。",
+        "在吗":"在啊，亲",
+        "最近有什么好看的电影": "亲，不同类型的电影都有新的精彩作品呢。动作片有刺激的，喜剧片有让人捧腹大笑的，您可以根据自己的心情来挑选哟。",
+        "怎么减肥": "亲爱的，合理饮食和适量运动是减肥的关键呢。您可以控制一下热量的摄入，多吃蔬菜水果，少吃油腻和甜食。同时，增加一些有氧运动，比如慢跑、游泳，相信您会慢慢达到理想的体重的。",
+        "如何提高学习效率": "亲，制定一个合理的学习计划会很有帮助哦。还要保持一个良好的学习环境，让自己能够专心。采用一些有效的学习方法，比如费曼技巧，也能让您的学习更高效呢。",
+        "我能穿越时空吗": "亲，目前的科学技术还无法实现真正的时空穿越呢，但谁知道未来会怎样呢，也许有一天这会成为可能哦。"
+      };
+
+      for (var question in questionsAndAnswers) {
+        if (input.includes(question)) {
+          var botMessageDiv = document.createElement('div');
+          botMessageDiv.className ='message bot-message';
+          botMessageDiv.innerHTML = questionsAndAnswers[question];
+          chatDiv.appendChild(botMessageDiv);
+          return;
+        }
+      }
+
+      var keywords = ["你好", "再见", "时间", "几点", "天气"];
+      var badWords = ["sb", "SB", "傻逼", "智障", "你妈", "操你妈", "fuck", "Fuck"]; 
+
+      for (var i = 0; i < keywords.length; i++) {
+        if (input.includes(keywords[i])) {
+          switch (keywords[i]) {
+            case "你好":
+              var botMessageDiv = document.createElement('div');
+              botMessageDiv.className ='message bot-message';
+              botMessageDiv.innerHTML = '亲爱的，您好呀，很高兴与您交流！';
+              chatDiv.appendChild(botMessageDiv);
+              break;
+            case "再见":
+              var botMessageDiv = document.createElement('div');
+              botMessageDiv.className ='message bot-message';
+              botMessageDiv.innerHTML = '亲爱的，再见，祝您有美好的一天！';
+              chatDiv.appendChild(botMessageDiv);
+              break;
+            case "时间":
+            case "几点":
+              var now = new Date();
+              var hours = now.getHours();
+              var minutes = now.getMinutes();
+              var seconds = now.getSeconds();
+              var botMessageDiv = document.createElement('div');
+              botMessageDiv.className ='message bot-message';
+              botMessageDiv.innerHTML = '亲爱的，当前时间是：' + hours + ':' + minutes + ':' + seconds;
+              chatDiv.appendChild(botMessageDiv);
+              break;
+            case "天气":
+              fetchWeatherData(selectedCity);
+              break;
+          }
+          return;
+        }
+      }
+
+      for (var j = 0; j < badWords.length; j++) {
+        if (input.includes(badWords[j])) {
+          var botMessageDiv = document.createElement('div');
+          botMessageDiv.className ='message bot-message';
+          botMessageDiv.innerHTML = '亲，请文明回答哟！！';
+          chatDiv.appendChild(botMessageDiv);
+          return;
+        }
+      }
+
+      var botMessageDiv = document.createElement('div');
+      botMessageDiv.className ='message bot-message';
+      botMessageDiv.innerHTML = '哦？';
+      chatDiv.appendChild(botMessageDiv);
+
+      document.getElementById('inputText').value = '';
+    }
+
+    function fetchWeatherData(city) {
+      const apiKey = 'd71c994bb51512646069a51fb00ebb9a';
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(url)
+ .then(response => response.json())
+ .then(data => {
+           var botMessageDiv = document.createElement('div');
+           botMessageDiv.className ='message bot-message';
+           botMessageDiv.innerHTML = `当前城市${city}的天气状况：${data.weather[0].description}，温度：${data.main.temp} 摄氏度`;
+           document.getElementById('chat').appendChild(botMessageDiv);
+         })
+ .catch(error => {
+           var botMessageDiv = document.createElement('div');
+           botMessageDiv.className ='message bot-message';
+           botMessageDiv.innerHTML = '亲，获取天气数据时出错了呢';
+           document.getElementById('chat').appendChild(botMessageDiv);
+         });
+    }
+  </script>
+</body>
+
+</html>
