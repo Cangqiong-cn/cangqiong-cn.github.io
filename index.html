@@ -1,42 +1,3 @@
-<?php
-// 连接数据库
-$servername = "localhost";
-$username = "Wang";
-$password = "114514wmz";
-$dbname = "wang";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 检查连接
-if ($conn->connect_error) {
-    die("连接失败: ". $conn->connect_error);
-}
-
-// 获取点赞数量
-$sql = "SELECT count FROM likes WHERE user_id = 1"; // 假设用户 ID 为 1
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $likeCount = $row["count"];
-} else {
-    $likeCount = 0;
-}
-
-// 点赞操作
-if (isset($_POST['like'])) {
-    $likeCount++;
-    $updateSql = "UPDATE likes SET count = $likeCount WHERE user_id = 1";
-    if ($conn->query($updateSql) === TRUE) {
-        echo "点赞成功，当前点赞数: $likeCount";
-    } else {
-        echo "更新点赞数量时出错: ". $conn->error;
-    }
-}
-
-$conn->close();
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -138,31 +99,6 @@ $conn->close();
     }
 
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-    }
-
-   .like-box {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      width: 80px;
-      height: 80px;
-      background-color: #e84118;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-   .like-text {
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-    }
 
   </style>
   <hr><br>
