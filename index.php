@@ -48,9 +48,8 @@ $conn->close();
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>苍穹联协_官方门户网站</title>
-    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" width="100%" height="100%" />
     <link rel="stylesheet" type="text/css" href="styles.css">
     <img src="icon.ico" alt=" " width="100%" height="100%">
 <h1 style="text-align: center;">苍穹联协 官方门户网站</h1>
@@ -61,7 +60,7 @@ $conn->close();
     head * {
       text-align: center;
     }
-   <!--navigation bar css strat-->
+
     :root {
       --w: 80vw;
       --div_w: calc(var(--w) / 6);
@@ -164,28 +163,7 @@ $conn->close();
       font-size: 20px;
       font-weight: bold;
     }
-@media screen and (max-width: 768px) {
-  nav {
-    background-color: #343a40;
-    padding: 10px 0;
-  }
 
- .item {
-    width: 100%;
-    padding: 15px 20px;
-    color: #fff;
-    font-size: 5px;
-    transition: background-color 0.3s ease;
-  }
-
- .item:hover {
-    background-color: #495057;
-  }
-
- .item +.item {
-    border-top: 1px solid #495057;
-  }
-}
   </style>
   <hr><br>
 </head>
