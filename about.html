@@ -9,30 +9,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="icon.ico" width="100%" height="100%" style="background-size: cover" />
     <link rel="stylesheet" type="text/css" href="styles.css">
     <img src="icon.ico" alt=" " width="100%" height="100%">
-    <h1 style="text-align: center;">苍穹联协 官方门户网站 关于我们</h1>
+    <h1 style="text-align: center;">苍穹联协 官方网站 关于我们</h1>
     <p style="text-align: center;"><small>Internet DogHead CangQiong Joint Association Official Website About us</small></p>	
     <br><br>	
 
       <style>
     body{    /* 主体 */
-        margin: 0;
-        padding: 0;
-        background-color: #f6f6f6;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 15px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        min-height: 100vh;
     }
 
-    .card{    /* 卡片样式 */
-        width: 320px;
-        background-color: #fff;
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, .12);
-    }
+
 
 
     .image{
@@ -63,72 +50,23 @@
     }
 
 
+    .eDiv{    /* 卡片Div与文字 */
+        background-color: #fff;
+        padding: 10px;
+        margin: 100px auto;
+        width: 600px;
+        height: 500px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 16px 16px 32px #9f9f9f,
+        -16px -16px 32px #ffffff;
+    }
+  
+
     head * {    /* 页首文字居中 */
       text-align: center;
     }
 
-    :root {    /* 页首导航 */
-      --w: 80vw;
-      --div_w: calc(var(--w) / 6);
-      --h: 95px;
-      --r: 15px;
-    }
-
-    nav {
-      width: var(--w);
-      height: var(--h);
-      border-radius: var(--r);
-      background: rgba(255, 255, 255,.5);
-      box-shadow: 16px 16px 32px #9f9f9f,
-        -16px -16px 32px #ffffff;
-      display: flex;
-      margin: 100px auto;
-      position: relative;
-    }
-
-  .item {
-      width: var(--div_w);
-      height: var(--h);
-      font-size: 30px;
-      text-align: center;
-      line-height: var(--h);
-    }
-
-  .item:nth-child(2):hover~#block {
-      left: var(--div_w);
-    }
-
-  .item:nth-child(3):hover~#block {
-      left: calc(var(--div_w) * 2);
-    }
-
-  .item:nth-child(4):hover~#block {
-      left: calc(var(--div_w) * 3);
-    }
-
-  .item:nth-child(5):hover~#block {
-      left: calc(var(--div_w) * 4);
-    }
-
-  .item:nth-child(6):hover~#block {
-      left: calc(var(--div_w) * 5);
-    }
-    .item:hover{
-        cursor: pointer;
-    }
-    #block {
-      transition: .5s;
-      width: var(--div_w);
-      height: var(--h);
-      background-color: rgba(100, 100, 130,.8);
-      border-radius: var(--r);
-      position: absolute;
-      left: 0;
-      z-index: -1;
-    }
-
-
-    }
     p::selection{    /* 文字颜色设置 */
         background-color: #9f9f9f;
         color: black;
@@ -149,27 +87,22 @@
 <body>
 
 
-    <nav>
-        <div class="item"><a href="https://cangqiong-cn.github.io/about.html">关于我们</a></div>
-        <div class="item"><a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=CMrpGAq4r6E6mwbEpY7GTXoMFyZ9YHGJ&authKey=8YU39TKepVyRe7bMbkKDM7XiUr938UgnrjqwDVizACa5bDEbeB4CTD32qEmIEyJb&noverify=0&group_code=885876679">加入官方群</a></div>
-        <div class="item"><a href="https://cangqiong-cn.github.io/rule.html">本站规则</a></div>
-        <div class="item"><a href="https://cangqiong-cn.github.io/yonghu.html">用户隐私条例</a></div>
-        <div class="item"><a href="https://cangqiong-cn.github.io/mhelp.html">赞助</a></div>
-        <div class="item"><a href="https://cangqiong-cn.github.io/kefu.php">自动客服</a></div>
-        <div id="block"></div>
-    </nav>
 
     
-     <div class="card loading">
+     <div class="eDiv">
          
          <div class="image">
              <img src="1.jpg" alt="">
          </div>
          <div class="content">
              <h4>概述组织</h4>
-             <p style="color: grey"><small>无际·著</small></p>
+             <p style="color: grey"><small>无际·著 <img src="lanv.png" width="20px" height="10px"></small></p>
              <div class="des">
-                 「苍穹联协」是由[无际]所组织的一个自由开放动画爱好者协会。在这里，协会被分为多个部门，包括「动画」，「审核」，「外事」，「宣传」。其中，动画部优秀成员辈出，包括[晓夜]，[查理]，[凉默]，[彩墨]，[沐扬]，[狼大狗子]，[VR]，[taci]，[乐栓]，[disk]等人（以上不代表质量排名）。对于质量偏低但愿意学习的朋友，我们给予尽可能好的教学与辅助。苍穹联协，静候您的到来。
+                 <hr>
+                 <strong>「苍穹联协」是由[无际]所组织的一个自由开放动画爱好者协会。在这里，协会被分为多个部门，包括「动画」，「审核」，「外事」，「宣传」。其中，动画部优秀成员辈出，包括[晓夜]，[查理]，[凉默]，[彩墨]，[沐扬]，[狼大狗子]，[VR]，[taci]，[乐栓]，[disk]等人（以上不代表质量排名）。对于质量偏低但愿意学习的朋友，我们给予尽可能好的教学与辅助。苍穹联协，静候您的到来。</strong>
+                 <hr>
+     </div>
+         </div>
      </div>
 
 
