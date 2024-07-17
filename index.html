@@ -8,9 +8,8 @@
 
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>苍穹联协_官方门户网站</title>
-    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" width="100%" height="100%" />
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" width="100%" height="100%" style="background-size: cover" />
     <link rel="stylesheet" type="text/css" href="styles.css">
     <img src="icon.ico" alt=" " width="100%" height="100%">
 <h1 style="text-align: center;">苍穹联协 官方门户网站</h1>
@@ -18,6 +17,97 @@
   <br><br>	
 
   <style>
+    body{
+        font-family: helvetica;
+    }
+
+    #main{
+        margin: 200px auto;
+        width: 650px;
+        height: 300px;
+        display: grid;
+        grid-template-rows: 100px 100px 100px;
+        grid-template-columns: 500px 150px;
+        overflow: hidden;
+        gap: 5px;
+    }
+    
+
+    input{
+        display: none;
+    }
+    
+
+
+    #tab{
+        grid-row: 1/4;
+        grid-column: 1/2;
+        background-color: #5758BB;
+        transition: 1s;
+    }
+    
+    label{
+        text-align: center;
+        line-height: 100px;
+        font-size: 2em;
+    }
+
+
+    .tab_s{
+        width: 500px;
+        height: 300px;
+        text-align: center;
+        line-height: 300px;
+        font-size: 4em;
+        
+    }
+
+    .tab_s:first-child{
+        background-color: olive;
+    }
+
+    .tab_s:nth-child(2){
+        background-color:  chartreuse;
+    }
+
+    .tab_s:nth-child(3){
+        background-color: cyan;
+    }
+
+    #l1{
+        grid-row: 1/2;
+        grid-column: 2/3;
+        background-color: olive;
+    }
+
+    #l2{
+       grid-row: 2/3;
+       grid-column: 2/3; 
+       background-color: chartreuse;
+    }
+
+    #l3{
+        grid-row: 3/4;
+        grid-column: 2/3;
+        background-color: cyan;
+    }
+
+
+    #l1:hover,#l2:hover,#l3:hover{
+        cursor: pointer;
+        background-color: #395;
+    }
+    #b1:checked ~ #tab{
+        transform: translateY(0px);
+    }
+    #b2:checked ~ #tab{
+        transform: translateY(-300px);
+    }
+    #b3:checked ~ #tab{
+        transform: translateY(-600px);
+    }
+
+
     head * {
       text-align: center;
     }
@@ -98,7 +188,17 @@
     color: black;
     }
 
+    #b1:checked ~ #tab{
+        transform: translateY(0px);
+    }
 
+    #b2:checked ~ #tab{
+        transform: translateY(-300px);
+    }
+
+    #b3:checked ~ #tab{
+        transform: translateY(-600px);
+    }
 
   </style>
   <hr><br>
@@ -112,14 +212,13 @@
     <div class="item"><a href="https://cangqiong-cn.github.io/rule.html">本站规则</a></div>
     <div class="item"><a href="https://cangqiong-cn.github.io/yonghu.html">用户隐私条例</a></div>
     <div class="item"><a href="https://cangqiong-cn.github.io/mhelp.html">赞助</a></div>
-    <div class="item"><a href="https://cangqiong-cn.github.io/kefu.html">自动客服</a></div>
+    <div class="item"><a href="https://cangqiong-cn.github.io/kefu.php">自动客服</a></div>
     <div id="block"></div>
   </nav>
 
   <div class="eDiv">
       <h2>欢迎：</h2>
     <div class="like-box" onclick="document.getElementById('likeForm').submit()">
-    <div class="like-text">喜欢 (<?php echo $likeCount;?>)</div>
   </div>
 
   <form action="" method="post" id="likeForm">
@@ -131,6 +230,21 @@
       </p>
   </div>
   
+    <h1 style="text-align: center;">优秀作品：</h1>
+    <div id="main">
+        <input type="radio" name="button" id="b1">
+        <input type="radio" name="button" id="b2">
+        <input type="radio" name="button" id="b3">
+        <label for="b1" id="l1"><img src="1.jpg" width="150px" height="100px"></img></label>
+        <label for="b2" id="l2"><img src="2.jpg" width="150px" height="100px"></img></label>
+        <label for="b3" id="l3"><img src="3.jpg" width="150px" height="100px"></img></label>
+        <div id="tab">
+            <div class="tab_s"><img src="1.jpg" width="500px" height="300px"></img></div>
+            <div class="tab_s"><img src="2.jpg" width="500px" height="300px"></img></div>
+            <div class="tab_s"><img src="3.jpg" width="500px" height="300px"></img></div>
+        </div>
+    </div>
+
 </body>
 <footer>
     <br><br><br><br><br><br>
