@@ -76,7 +76,91 @@
     color: black;
     }
 
+    .btn-animate {    /* “加入”按钮 */
+  position: relative;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: #339933;
+  color: #fff;
+  text-align: center;
+}
 
+@keyframes crissCrossLeft {
+  0% {
+    left: -20px
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@keyframes crissCrossRight {
+  0% {
+    right: -20px
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+
+.btn-animate__ball-collision {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #90cf5b;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all 0.6s;
+    z-index: -1;
+  }
+
+  &::before {
+    left: -20px;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    right: -20px;
+    transform: translate(50%, -50%);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      animation: crissCrossLeft .8s both;
+    }
+
+    &::after {
+      opacity: 1;
+      animation: crissCrossRight .8s both;
+    }
+  }
+}
 
   </style>
   <hr><br>
@@ -100,8 +184,12 @@
              <div class="des">
                  <hr>
                  <strong>「苍穹联协」是由[无际]所组织的一个自由开放动画爱好者协会。在这里，协会被分为多个部门，包括「动画」，「审核」，「外事」，「宣传」。其中，动画部优秀成员辈出，包括[晓夜]，[查理]，[凉默]，[彩墨]，[沐扬]，[狼大狗子]，[VR]，[taci]，[乐栓]，[disk]等人（以上不代表质量排名）。对于质量偏低但愿意学习的朋友，我们给予尽可能好的教学与辅助。苍穹联协，静候您的到来。</strong>
+                 <div class="btn-animate btn-animate__ball-collision">
+                   <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=CMrpGAq4r6E6mwbEpY7GTXoMFyZ9YHGJ&authKey=8YU39TKepVyRe7bMbkKDM7XiUr938UgnrjqwDVizACa5bDEbeB4CTD32qEmIEyJb&noverify=0&group_code=885876679">加入我们</a>
+                 </div>
                  <hr>
                  <p style="color: grey"><small>图片来自enp_3<img src="lanv.png" width="20px" height="10px"></small></p>
+                 
      </div>
          </div>
      </div>
