@@ -1,100 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+    <head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>加入我们 | 苍穹联协</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>加入我们 | 苍穹联协</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+        <style>
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #222;
-      gap: 50px;
-      flex-direction: column;
-    }
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins',sans-serif;
+            }
 
-    a {
-      position: relative;
-      padding: 20px 60px;
-      background-color: rgba(45, 45, 45, 1);
-      border-radius: 50px;
-      color: #999;
-      font-size: 1.5em;
-      text-decoration: none;
-      overflow: hidden;
-      transition:.5s;
-    }
 
-    a:hover {
-      color: var(--clr);
-      text-shadow: 0 0 15px var(--clr),
-        0 0 40px var(--clr);
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: #222;
+                gap: 50px;
+                flex-direction: column;
+            }
 
-    }
 
-    a::before {
-      content: '';
-      position: absolute;
-      top: var(--y);
-      left: var(--x);
-      transform: translate(-50%, -50%);
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(var(--clr), transparent, transparent);
-      opacity: 0;
-      transition:.5s, top 0s, left 0s;
-    }
+            a{
+                position: relative;
+                padding: 20px 60px;
+                background-color: rgba(45,45,45,1);
+                border-radius: 50px;
+                color: #999;
+                font-size: 1.5em;
+                text-decoration: none;
+                overflow: hidden;
+                transition: .5s;
+            }
 
-    a span {
-      position: relative;
-      z-index: 1;
-      letter-spacing:.2em;
-    }
 
-    a:hover::before {
-      opacity: 1;
-    }
+            a:hover{
+                color: var(--clr);
+                text-shadow: 0 0 15px var(--clr),
+                             0 0 40px var(--clr);
 
-    a::after {
-      content: '';
-      background-color: rgba(45, 45, 45,.8);
-      position: absolute;
-      inset: 2px;
-      border-radius: 48px;
-    }
-  </style>
+            }
 
-</head>
+            a::before{
+                content: '';
+                position: absolute;
+                top: var(--y);
+                left: var(--x);
+                transform: translate(-50%,-50%);
+                width: 200px;
+                height: 200px;
+                background: radial-gradient(var(--clr),transparent,transparent);
+                opacity: 0;
+                transition: .5s top 0s, left 0s;
+            }
 
-<body>
 
-  <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=CMrpGAq4r6E6mwbEpY7GTXoMFyZ9YHGJ&authKey=8YU39TKepVyRe7bMbkKDM7XiUr938UgnrjqwDVizACa5bDEbeB4CTD32qEmIEyJb&noverify=0&group_code=885876679" style="--clr: #0f0;"><span>加入我们</span></a>
-  <a href="https://pd.qq.com/s/4o6k8i9yf" style="--clr: #ff0;"><span>网站频道</span></a>
+            a span{
+                position: relative;
+                z-index: 1;
+                letter-spacing: .2em;
+            }
 
-  <script type="text/javascript">
-    let btns = document.querySelectorAll('a')
-    btns.forEach(btn => {
-      btn.onmousemove = (e) => {
-        let x = e.pageX;
-        let y = e.pageY;
 
-        btn.style.setProperty('--x', x + 'px')
-        btn.style.setProperty('--y', y + 'px')
-      }
-    })
-  </script>
+            a:hover::before{
+                opacity: 1;
+            }
 
-</body>
+            a::after{
+                content: '';
+                background-color: rgba(45,45,45,.8);
+                position: absolute;
+                inset: 2px;
+                border-radius: 48px;
+              
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+        <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=CMrpGAq4r6E6mwbEpY7GTXoMFyZ9YHGJ&authKey=8YU39TKepVyRe7bMbkKDM7XiUr938UgnrjqwDVizACa5bDEbeB4CTD32qEmIEyJb&noverify=0&group_code=885876679" style="--clr: #FFFACD;"><span>加入我们</span></a>
+        <a href="https://pd.qq.com/s/4o6k8i9yf" style="--clr: #E6E6FA;"><span>网站频道</span></a>
+        <a href="https://cangqiong-cn.github.io/a.html" style="--clr: #AFEEEE;"><span>联系管理</span></a>
+        <a href="https://cangqiong-cn.github.io/about.html" style="--clr: #90EE90;"><span>关于我们</span></a>
+      
+
+<script type="text/javascript">
+
+            let btns = document.querySelectorAll('a')
+            btns.forEach(btn => {
+                btn.onmousemove = (e) => {
+                    let x = e.pageX - btn.offsetLeft 
+                    let y = e.pageY - btn.offsetTop
+
+                    btn.style.setProperty('--x', x + 'px')
+                    btn.style.setProperty('--y', y + 'px')
+                }
+            })
+
+        </script>
+
+    </body>
 
 </html>
