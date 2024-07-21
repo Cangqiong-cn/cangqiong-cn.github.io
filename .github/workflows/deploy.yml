@@ -1,0 +1,25 @@
+name: Deploy PHP Backend
+
+on:
+  push:
+    branches:
+      - main  # 触发部署的分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # 选择运行环境
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'  # 指定 PHP 版本
+
+      - name: Install dependencies
+        run: composer install  # 如果您使用 Composer 管理依赖
+
+      - name: Deploy to server
+        # 此处添加将代码部署到服务器的步骤，这可能涉及使用 SSH 连接服务器、上传文件等操作
